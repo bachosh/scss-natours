@@ -1,0 +1,17 @@
+
+npm init   axali pakage.json sheqmna foldershi
+npm install node-sass --save-dev  // saasis compilatoris dakeneba
+touch main.scss  // failis sheqmna
+"scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css"
+  },  // scriptis gawera  main.scss is dakompilireba style.css shi
+npm run compile:sass // gashveba scriptis
+
+ "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css",
+    "autocompile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+npm run autocompile:sass // avtokompilacia
+
+
+sudo npm install live-server -g

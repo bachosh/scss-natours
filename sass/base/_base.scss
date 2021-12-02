@@ -1,0 +1,15 @@
+
+
+* , /*  varskvlavi aris universal selector i. vela obieqts am gverdze daamatebs am css ebs */
+*::after,
+*::before {   
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;  /*inherit nishnavs rom es box-sizing _i mshobeli elementidan aiRebs box-sizing _is mnishvnelobas */
+}
+
+/* set global font size , root font size*/
+html {
+  font-size: 62.5%;
+}
+

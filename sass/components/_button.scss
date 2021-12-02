@@ -1,0 +1,122 @@
+
+.btn {
+    &,
+    &:link,
+    &:visited {
+      /* :link da :visited aris sudo clasi , vikenebt roca gvchirdeba elementze gansakutrebuli pirobebis drom css is damateba */
+  
+      text-transform: uppercase;
+      text-decoration: none;
+      /* ase tu vrewr 15px iqneba marjvniv da marcxniv da 40px zevit da qvevit */
+      padding: 1.5rem 4rem; 
+  
+      /* mas vaketebt imitom rom texts mivcet padingis sashualeba */
+      display: inline-block;
+  
+      border-radius: 10rem;
+  
+      /* es sawyisi state aris da moqmedebs qveda sudo clasis transformebze */
+      transition: all .2s;
+  
+      /* amas vikenebt after is gamo */
+      position:relative;
+      font-size: $default-font-size;
+
+      //Change for the <button> element 
+      border: none;
+      cursor: pointer;
+    }
+  
+    &:hover  {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black,.2);
+  
+      &::after  {
+        transform: scaleX(1.4) scaleY(1.6);  
+        opacity: 0;  /* gamchirvaleoba*/
+      }    
+    }
+  
+  
+    /* : active roca dacherilia xeli btn ze */
+    &:active  ,
+    &:focus {    
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+  
+  
+    &--white {
+      background-color: $color-white;
+      color: $color-grey-dark;
+  
+      &::after {
+        background-color: $color-white;
+      }
+    }
+  
+
+    &--green {
+      background-color: $color-primary;
+      color: $color-white;
+
+      &::after {
+          background-color: $color-primary;
+      }
+    }
+
+    &::after {
+  
+      /* aucilebeli velebia */
+      content: "";
+      display: inline-block;
+  
+      /* praqtikulad child elements qmvis .btn elementis da 100% zeda elementis zomebia  */
+      height: 100%;
+      width:  100%;
+      border-radius: 10rem;
+  
+      /* position absoluti edzebs zeda elements romelic iqneba position: relative amitom .btn vadzlevt position: relative room misgan aigos */
+      /* amit after elementi .btn elementis zustad ukan daimaleba */
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+  
+      transition: all .4s;
+    }
+  
+    &--animated {
+      animation: moveInBottom .5s ease-out .75s;
+      /* winsawar apply animation     opacity: 0; sanam animacia daiwyeba */
+      animation-fill-mode: backwards;
+    }
+  
+  } // .btn
+
+
+  .btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all .2s;
+    }
+
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}

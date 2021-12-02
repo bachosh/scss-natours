@@ -1,0 +1,42 @@
+.header {
+    height: 85vh; /* viewport height */
+    background-image: linear-gradient(to right bottom, 
+                                      rgba($color-primary-light, 0.801), 
+                                      rgba($color-primary-dark, 0.801)) , 
+                      url(../img/hero.jpg);
+   // aq 2 backg image gvaq. zeda gradienti da qveda url
+
+
+    background-size: cover; /* cover ekranis zomas argebs elements */
+    background-position: top;  /* suratis zeda nawili darcheba ucvleli da danarchenebi moichreba */
+    position: relative;
+
+    /*  amiti am class matrkutxedidan gadavaqcevT trapeciad . kargi resursi https://bennettfeely.com/clippy/ */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100% );
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100% );
+
+    // & es nishani akopirebs clasis saxels .header
+    &__logo-box {
+      position: relative;
+      top: 4rem;
+      left: 4rem;      
+    }
+
+    &__logo {
+      height: 3.5rem;
+    }
+  
+  /* .logo:hover {
+      animation: moveInRight 1.5s ease-out;
+  } */
+  
+    &__text-box {
+        position: absolute; 
+        top: 40%;  /* poziciis kordinatebi iTveleba boxis zeda marcxena kuTxiT */
+        left: 50%;
+        transform: translate(-50%,-50%); /* amiT poziciis daTvlas vuwyebT boxis shua nawiliT da shuashu vxatavT zustad */
+        text-align: center;
+    }
+  
+
+} // end header
