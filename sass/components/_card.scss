@@ -165,7 +165,7 @@
 
     //@include respond(tab-port) {
     @media only screen and (max-width: 56.25em),
-            only screen and (hover: none) {
+            only screen and (hover: none) { // როდესაც თაჩ მოწყობილობაა hover: none
 
         height: auto;
         border-radius: 3px;

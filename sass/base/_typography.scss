@@ -1,14 +1,12 @@
-
-
 body {
     font-family: 'lato'; /* google fonts fonti */
     font-weight: 400;  /* ramdenad bold aris fonti */
     /* font-size: 16px; */
-    font-size: 1.7rem;
+    // font-size: 1.7rem;
     line-height: 1.7; /* standartul zomas amatebs 70% ents */
     color: $color-grey-dark;
-    padding: 3rem;
-    box-sizing: border-box;  /* The width and height properties include the content, padding, and border, but do not include the margin */
+    // padding: 3rem;
+    // box-sizing: border-box;  /* The width and height properties include the content, padding, and border, but do not include the margin */
 }
 
 
@@ -17,7 +15,7 @@ body {
     text-transform: uppercase;
   
     backface-visibility: hidden; /* amas vakeTebT animaciam rxeva rom ar daiwyos */
-    margin-bottom: 1.6rem;
+    margin-bottom: 6rem;
   
   
     &--main {
@@ -31,6 +29,11 @@ body {
       animation-timing-function: ease-out;
       /* animation-iteration-count: 3; */
       /* animation-delay: 3s; */
+        
+      @include respond(phone) {
+        letter-spacing: 1rem;
+        font-family: 5rem;
+      }      
     }
     
     &--sub {
@@ -40,6 +43,10 @@ body {
       letter-spacing: 1.75rem;
     
       animation: moveInRight 1.5s ease-out;
+
+      @include respond(phone) {
+        letter-spacing: .5rem;
+      }      
     }
     
   

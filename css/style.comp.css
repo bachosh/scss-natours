@@ -15,6 +15,7 @@ ORDER: Base + typography > general layout + grid > page layout > components
 
 1em = 16px
 */
+/* animaciebi */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -48,9 +49,11 @@ ORDER: Base + typography > general layout + grid > page layout > components
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  /*inherit nishnavs rom es box-sizing _i mshobeli elementidan aiRebs box-sizing _is mnishvnelobas */ }
 
 html {
+  /* set global font size , root font size*/
   font-size: 62.5%; }
   @media only screen and (max-width: 75em) {
     html {
@@ -74,16 +77,20 @@ body {
   color: #fff; }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'lato';
+  /* google fonts fonti */
   font-weight: 400;
-  /*font-size: 16px;*/
+  /* ramdenad bold aris fonti */
+  /* font-size: 16px; */
   line-height: 1.7;
+  /* standartul zomas amatebs 70% ents */
   color: #777; }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
+  /* amas vakeTebT animaciam rxeva rom ar daiwyos */
   margin-bottom: 6rem; }
   .heading-primary--main {
     display: block;
@@ -91,12 +98,10 @@ body {
     font-weight: 400;
     letter-spacing: 3.5rem;
     animation-name: moveInLeft;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
     animation-timing-function: ease-out;
-    /*
-        animation-delay: 3s;
-        animation-iteration-count: 3;
-        */ }
+    /* animation-iteration-count: 3; */
+    /* animation-delay: 3s; */ }
     @media only screen and (max-width: 37.5em) {
       .heading-primary--main {
         letter-spacing: 1rem;
@@ -106,7 +111,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out; }
+    animation: moveInRight 1.5s ease-out; }
     @media only screen and (max-width: 37.5em) {
       .heading-primary--sub {
         letter-spacing: .5rem; } }
@@ -179,57 +184,64 @@ body {
     width: 100%;
     object-fit: cover; }
 
-.btn, .btn:link, .btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 10rem;
-  transition: all .2s;
-  position: relative;
-  font-size: 1.6rem;
-  border: none;
-  cursor: pointer; }
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-  .btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0; }
-
-.btn:active, .btn:focus {
-  outline: none;
-  transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-  .btn--white::after {
-    background-color: #fff; }
-
-.btn--green {
-  background-color: #55c57a;
-  color: #fff; }
-  .btn--green::after {
-    background-color: #55c57a; }
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 10rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .4s; }
-
-.btn--animated {
-  animation: moveInBottom .5s ease-out .75s;
-  animation-fill-mode: backwards; }
+.btn {
+  /* : active roca dacherilia xeli btn ze */ }
+  .btn, .btn:link, .btn:visited {
+    /* :link da :visited aris sudo clasi , vikenebt roca gvchirdeba elementze gansakutrebuli pirobebis drom css is damateba */
+    text-transform: uppercase;
+    text-decoration: none;
+    /* ase tu vrewr 15px iqneba marjvniv da marcxniv da 40px zevit da qvevit */
+    padding: 1.5rem 4rem;
+    /* mas vaketebt imitom rom texts mivcet padingis sashualeba */
+    display: inline-block;
+    border-radius: 10rem;
+    /* es sawyisi state aris da moqmedebs qveda sudo clasis transformebze */
+    transition: all .2s;
+    /* amas vikenebt after is gamo */
+    position: relative;
+    font-size: 1.6rem;
+    border: none;
+    cursor: pointer; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+      /* gamchirvaleoba*/ }
+  .btn:active, .btn:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn--green {
+    background-color: #55c57a;
+    color: #fff; }
+    .btn--green::after {
+      background-color: #55c57a; }
+  .btn::after {
+    /* aucilebeli velebia */
+    content: "";
+    display: inline-block;
+    /* praqtikulad child elements qmvis .btn elementis da 100% zeda elementis zomebia  */
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /* position absoluti edzebs zeda elements romelic iqneba position: relative amitom .btn vadzlevt position: relative room misgan aigos */
+    /* amit after elementi .btn elementis zustad ukan daimaleba */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s; }
+  .btn--animated {
+    animation: moveInBottom .5s ease-out .75s;
+    /* winsawar apply animation     opacity: 0; sanam animacia daiwyeba */
+    animation-fill-mode: backwards; }
 
 .btn-text:link, .btn-text:visited {
   font-size: 1.6rem;
@@ -453,7 +465,7 @@ body {
   color: inherit;
   padding: 1.5rem 2rem;
   border-radius: 2px;
-  background-color: rbga(#fff, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-bottom: 3px solid transparent;
   width: 90%;
@@ -759,10 +771,17 @@ body {
 
 .header {
   height: 85vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero-small.jpg);
+  /* viewport height */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.801), rgba(40, 180, 133, 0.801)), url(../img/hero.jpg);
   background-size: cover;
+  /* cover ekranis zomas argebs elements */
   background-position: top;
-  position: relative; }
+  /* suratis zeda nawili darcheba ucvleli da danarchenebi moichreba */
+  position: relative;
+  /*  amiti am class matrkutxedidan gadavaqcevT trapeciad . kargi resursi https://bennettfeely.com/clippy/ */
+  /* .logo:hover {
+      animation: moveInRight 1.5s ease-out;
+  } */ }
   @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -776,7 +795,7 @@ body {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
   .header__logo-box {
-    position: absolute;
+    position: relative;
     top: 4rem;
     left: 4rem; }
   .header__logo {
@@ -784,8 +803,10 @@ body {
   .header__text-box {
     position: absolute;
     top: 40%;
+    /* poziciis kordinatebi iTveleba boxis zeda marcxena kuTxiT */
     left: 50%;
     transform: translate(-50%, -50%);
+    /* amiT poziciis daTvlas vuwyebT boxis shua nawiliT da shuashu vxatavT zustad */
     text-align: center; }
 
 .navigation__checkbox {
